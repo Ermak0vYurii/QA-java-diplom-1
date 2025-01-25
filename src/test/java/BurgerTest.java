@@ -24,20 +24,20 @@ public class BurgerTest {
     @Test
     public void setBunTest() {
         burger.setBuns(bunMock);
-        assertEquals(bunMock, burger.bun);
+        assertEquals("Булка не соответствует выбранной", bunMock, burger.bun);
     }
 
     @Test
     public void addIngredientTest() {
         burger.addIngredient(ingredientMock);
-        assertEquals(ingredientMock, burger.ingredients.get(0));
+        assertEquals("Ингредиент не добавлен", ingredientMock, burger.ingredients.get(0));
     }
 
     @Test
     public void removeIngredientTest() {
         burger.addIngredient(ingredientMock);
         burger.removeIngredient(0);
-        assertEquals(burger.ingredients.size(), 0);
+        assertEquals("Ингредиент не удалён", burger.ingredients.size(), 0);
     }
 
     @Test
@@ -45,7 +45,7 @@ public class BurgerTest {
         burger.addIngredient(ingredientMock);
         burger.addIngredient(ingredientMock2);
         burger.moveIngredient(1,0);
-        assertEquals(ingredientMock2, burger.ingredients.get(0));
+        assertEquals("Ингредиент не заменён", ingredientMock2, burger.ingredients.get(0));
     }
 
     @Test
@@ -76,6 +76,6 @@ public class BurgerTest {
                                 "\r\nPrice: " + priceBurger + "\r\n";
         System.out.println("Ожидаемый результат: \n" + expectedReceipt);
         System.out.println("Фактический результат: \n" + actualReceipt);
-        assertEquals(expectedReceipt, actualReceipt);
+        assertEquals("Рецепт бургера не верный", expectedReceipt, actualReceipt);
     }
 }
