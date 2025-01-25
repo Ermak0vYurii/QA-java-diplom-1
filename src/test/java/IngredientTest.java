@@ -21,7 +21,7 @@ public class IngredientTest {
 
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters (name = "IngredientType: {0}, IngredientName: {1}, IngredientPrice: {2}")
     public static Object[][] testData() {
         return new Object[][]{
                 {SAUCE, "hot sauce", 100},
@@ -32,18 +32,18 @@ public class IngredientTest {
     @Test
     public void getPriceTest() {
         Ingredient ingredient = new Ingredient(type, name, price);
-        assertEquals(price, ingredient.getPrice(), 0);
+        assertEquals("Неверная цена ингредиента", price, ingredient.getPrice(), 0);
     }
 
     @Test
     public void getNameTest() {
         Ingredient ingredient = new Ingredient(type, name, price);
-        assertEquals(name, ingredient.getName());
+        assertEquals("Неверное имя ингредиента", name, ingredient.getName());
     }
 
     @Test
     public void getTypeTest() {
         Ingredient ingredient = new Ingredient(type, name, price);
-        assertEquals(type, ingredient.getType());
+        assertEquals("Неверный тип ингредиента", type, ingredient.getType());
     }
 }
