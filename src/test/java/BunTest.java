@@ -10,12 +10,11 @@ public class BunTest {
 
     @Test
     public void getNameTest() {
-         assertEquals(NAME_BUN, bun.getName());
+         assertEquals("Неверное название булки", NAME_BUN, bun.getName());
     }
 
     @Test
     public void getPriceTest() {
-        assertEquals(PRICE_BUN, bun.getPrice(), 0);
+        assertEquals("Неверная стоимость булки", PRICE_BUN, bun.getPrice(), 0);
     }
-
 }
