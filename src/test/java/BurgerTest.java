@@ -19,9 +19,7 @@ public class BurgerTest {
     @Mock
     Bun bunMock;
     @Mock
-    Ingredient ingredientMock;
-    @Mock
-    Ingredient ingredientMock2;
+    Ingredient ingredientMock, ingredientMock2;
 
     @Test
     public void setBunTest() {
